@@ -178,6 +178,7 @@ GEM
     multi_json (1.15.0)
     multi_xml (0.7.1)
       bigdecimal (~> 3.1)
+    mutex_m (0.3.0)
     net-http (0.6.0)
       uri
     net-imap (0.5.5)
@@ -336,6 +337,7 @@ DEPENDENCIES
   faker
   google-ads-googleads
   jbuilder
+  mutex_m
   omniauth
   omniauth-google-oauth2
   omniauth-rails_csrf_protection
