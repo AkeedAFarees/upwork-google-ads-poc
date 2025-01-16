@@ -1,0 +1,30 @@
+<h1 class="page-title">Google Ads Manager</h1>
+
+<% if user_signed_in? %>
+  <div class="form-container">
+    <%= form_with url: set_credentials_path, method: :post, local: true do |f| %>
+      <div class="form-group">
+        <%= f.text_field :developer_token, class: 'form-control', placeholder: 'Please enter the developer token', required: true %>
+        <p class="field-explanation">
+          Visit <a href="https://ads.google.com/aw/apicenter" target="_blank">Google Ads API Center</a> and select your production manager account to obtain the developer token. 
+          This token allows your application to interact with the Google Ads API.
+        </p>
+
+        <%= f.text_field :manager_id, class: 'form-control', placeholder: 'Please enter Manager ID (e.g., 1234567890)', required: true %>
+        <p class="field-explanation">
+          Enter the 10-digit Manager ID for the test account manager (without dashes). 
+          This ID is associated with your test Google Ads Manager Account and is needed for testing API interactions.
+        </p>
+        
+        <%= f.submit 'Set Credentials', class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <div class="centered-container">
+    <%= button_to "Login with Google", "/auth/google_oauth2", data: { turbo: false }, class: 'btn btn-primary' %>
+    <p class="login-explanation">
+      You need to log in with your Google account to access the Google Ads Manager features and configure your credentials.
+    </p>
+  </div>
+<% end %>

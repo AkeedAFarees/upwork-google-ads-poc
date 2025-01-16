@@ -1,0 +1,174 @@
+<div class="instructions">
+  <h1>Google Ads Account Setup Instructions</h1>
+
+  <h2>1. Create a Production Manager Account on Google Ads</h2>
+  <ol>
+    <li>
+      <strong>Sign Up for a Manager Account:</strong>
+      <ul>
+        <li>Go to the <a href="https://ads.google.com/intl/en_in/home/tools/manager-accounts/" target="_blank">Google Ads Manager Account Signup</a> page.</li>
+        <li>Click <strong>Start Now</strong> and sign in with a Google account.</li>
+        <li>Provide details for the account, including:
+          <ul>
+            <li>Account name</li>
+            <li>Billing country</li>
+            <li>Time zone</li>
+            <li>Currency</li>
+          </ul>
+        </li>
+        <li>Accept the terms and conditions and click <strong>Create Account</strong>.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Set Up Billing:</strong>
+      <ul>
+        <li>Navigate to <strong>Tools & Settings > Billing > Billing Settings</strong>.</li>
+        <li>Select a payment method and complete the billing setup.</li>
+        <li>Ensure that the account is active by associating it with valid payment information.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h2>2. Obtain a Developer Token</h2>
+  <ol>
+    <li>
+      <strong>Enable API Access:</strong>
+      <ul>
+        <li>Log into your <strong>Google Ads Manager Account</strong>.</li>
+        <li>Go to <strong>Tools & Settings > Setup > API Center</strong>.</li>
+        <li>Under the <strong>API Center</strong>, locate the section for obtaining a <strong>Developer Token</strong>.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Apply for a Developer Token:</strong>
+      <ul>
+        <li>Fill in the required details for your application:
+          <ul>
+            <li>Indicate whether the token will be used for internal purposes or third-party app development.</li>
+            <li>Provide a detailed explanation of your app and how you plan to use the API.</li>
+          </ul>
+        </li>
+        <li>Submit the application.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Review and Approval:</strong>
+      <ul>
+        <li>Google will review your request. Ensure the explanation is clear, professional, and complies with their terms.</li>
+        <li>Once approved, you’ll receive a <strong>Test Token</strong> initially. To activate it for production, follow Google’s verification steps, including completing their API compliance review if required.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h2>3. Create a Test Manager and Test Client Account</h2>
+  <h3>3.1. Create a Test Manager Account</h3>
+  <ol>
+    <li>
+      <strong>Log Into Google Ads API Test Accounts Section:</strong>
+      <ul>
+        <li>Go to the <a href="https://developers.google.com/google-ads/api/docs/testing/test-accounts" target="_blank">Test Accounts Documentation</a>.</li>
+        <li>Ensure you are logged into the <strong>Production Manager Account</strong> with API access.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Request a Test Manager Account:</strong>
+      <ul>
+        <li>Navigate to the <strong>Google Ads API Test Accounts Request Form</strong>.</li>
+        <li>Provide your <strong>Production Manager Account ID</strong> and submit the request.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Activate the Test Manager Account:</strong>
+      <ul>
+        <li>Once approved, Google will provide access to a Test Manager Account.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h3>3.2. Create a Test Client Account</h3>
+  <ol>
+    <li>
+      <strong>Log Into the Test Manager Account:</strong>
+      <ul>
+        <li>Use the Test Manager Account credentials provided by Google.</li>
+        <li>Navigate to <strong>Accounts > Create New Account</strong>.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Create a Test Client Account:</strong>
+      <ul>
+        <li>Set up a new client account under the Test Manager Account by filling in:
+          <ul>
+            <li>Account name</li>
+            <li>Billing country</li>
+            <li>Time zone</li>
+            <li>Currency</li>
+          </ul>
+        </li>
+        <li>Skip billing information, as test accounts do not require payment setup.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h2>4. Associate Test Accounts with the Production Account</h2>
+  <ol>
+    <li>
+      <strong>Grant Access to the Production Manager Account:</strong>
+      <ul>
+        <li>In the <strong>Test Manager Account</strong>, navigate to <strong>Account Access</strong> under <strong>Tools & Settings</strong>.</li>
+        <li>Click <strong>Add Users</strong> and invite the Production Manager Account using its email address.</li>
+        <li>Assign the appropriate role (e.g., <strong>Admin</strong> or <strong>Standard</strong>).</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Accept the Invitation:</strong>
+      <ul>
+        <li>Log into the <strong>Production Manager Account</strong> and accept the invitation to manage the Test Manager Account.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Repeat for the Test Client Account:</strong>
+      <ul>
+        <li>Log into the Test Client Account.</li>
+        <li>Grant access to the Production Manager Account using the same steps.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h2>5. Verify Production Account Association</h2>
+  <ul>
+    <li>Log into the <strong>Production Manager Account</strong> and confirm that it has access to:
+      <ul>
+        <li>The Test Manager Account.</li>
+        <li>The Test Client Account under the Test Manager Account.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>6. Enter Credentials</h2>
+  <ul>
+    <li>After completing the above setup, navigate back to the <a href="<%= root_path %>">Dashboard</a>. 
+      Here, you'll find options to verify that your developer token and manager ID are correctly configured. 
+      Follow the on-screen instructions to ensure successful integration.
+    </li>
+  </ul>
+</div>
+
+<style>
+    .instructions {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 2rem;
+      background-color: #f9f9f9;
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+  </style>

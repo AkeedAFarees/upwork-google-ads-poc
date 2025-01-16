@@ -1,0 +1,49 @@
+<h1 class="page-title">Ad Groups for Campaign</h1>
+
+<div class="centered-container">
+  <%= button_to 'Create Ad Group', create_ad_group_campaign_path(@campaign_id), data: { turbo: false }, class: 'btn btn-primary' %>
+</div>
+
+<% if @ad_groups.present? %>
+  <div class="table-container">
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Ad Group ID</th>
+          <th>Name</th>
+          <th>Status</th>
+          <th>Ads</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @ad_groups.each do |ad_group| %>
+          <tr>
+            <td><%= ad_group[:id] %></td>
+            <td><%= ad_group[:name] %></td>
+            <td><%= ad_group[:status] %></td>
+            <td>
+              <% if ad_group[:ads].present? %>
+                <ul>
+                  <% ad_group[:ads].each do |ad| %>
+                    <li>
+                      <strong>Ad ID:</strong> <%= ad[:id] %><br>
+                      <strong>Status:</strong> <%= ad[:status] %><br>
+                      <strong>Headlines:</strong> <%= ad[:headlines].join(', ') %>
+                    </li>
+                  <% end %>
+                </ul>
+              <% else %>
+                <p>No ads found.</p>
+              <% end %>
+            </td>
+            <td><%= button_to 'Create Ad', create_ad_campaign_path(@campaign_id, ad_group_id: ad_group[:id]), data: { turbo: false }, class: 'btn btn-primary' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% else %>
+  <p class="no-data-message">No ad groups found for this campaign.</p>
+<% end %>
+

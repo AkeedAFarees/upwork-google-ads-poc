@@ -1,0 +1,12 @@
+<nav class="navbar">
+  <a href="<%= root_path %>" class="navbar-logo">
+    <%= image_tag 'google_ads_logo.png', alt: 'Google Ads Logo' %>
+  </a>
+  <div class=navbar-btns>
+    <% if user_signed_in? %>
+      <%= link_to 'Setup Instructions', setup_path, method: :get, class: 'btn btn-primary' %>
+      <%= link_to 'Campaigns', campaigns_path, method: :get, class: 'btn btn-primary' %>
+      <%= link_to 'Logout', logout_path, method: :get, class: 'btn-danger' %>
+    <% end %>
+  </div>
+</nav>

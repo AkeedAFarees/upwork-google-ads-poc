@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GoogleAdsApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" href="https://img.icons8.com/color/48/google-ads.png" type="image/png" />
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application" %>
+  </head>
+
+  <body>
+    <%= render 'layouts/navbar' %> <!-- Rendering the navbar partial -->
+
+    <div class="content">
+      <%= yield %> <!-- This renders the content of each page -->
+    </div>
+  </body>
+</html>
